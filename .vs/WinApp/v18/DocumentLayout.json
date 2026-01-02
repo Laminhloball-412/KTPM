@@ -1,0 +1,52 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\SQL2022\\KTPM_FULL_UPDATED\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\SQL2022\\KTPM_FULL_UPDATED\\WinApp\\SQL\\Tables.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WinApp\\SQL\\Tables.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\SQL2022\\KTPM_FULL_UPDATED\\WinApp\\SQL\\insertdata\\hethong.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WinApp\\SQL\\insertdata\\hethong.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "hethong.sql - localhost\\SQLEXPRESS.KTPM (MONY\\THINKPAD (76))",
+              "DocumentMoniker": "E:\\SQL2022\\KTPM_FULL_UPDATED\\WinApp\\SQL\\insertdata\\hethong.sql",
+              "RelativeDocumentMoniker": "WinApp\\SQL\\insertdata\\hethong.sql",
+              "ToolTip": "E:\\SQL2022\\KTPM_FULL_UPDATED\\WinApp\\SQL\\insertdata\\hethong.sql - localhost\\SQLEXPRESS.KTPM (MONY\\THINKPAD (76))",
+              "RelativeToolTip": "WinApp\\SQL\\insertdata\\hethong.sql - localhost\\SQLEXPRESS.KTPM (MONY\\THINKPAD (76))",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-12-29T16:20:16.354Z",
+              "EditorCaption": " - localhost\\SQLEXPRESS.KTPM (MONY\\THINKPAD (76))"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Tables.sql - localhost\\SQLEXPRESS.KTPM (MONY\\THINKPAD (69))",
+              "DocumentMoniker": "E:\\SQL2022\\KTPM_FULL_UPDATED\\WinApp\\SQL\\Tables.sql",
+              "RelativeDocumentMoniker": "WinApp\\SQL\\Tables.sql",
+              "ToolTip": "E:\\SQL2022\\KTPM_FULL_UPDATED\\WinApp\\SQL\\Tables.sql - localhost\\SQLEXPRESS.KTPM (MONY\\THINKPAD (69))",
+              "RelativeToolTip": "WinApp\\SQL\\Tables.sql - localhost\\SQLEXPRESS.KTPM (MONY\\THINKPAD (69))",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-12-29T16:20:08.393Z",
+              "EditorCaption": " - localhost\\SQLEXPRESS.KTPM (MONY\\THINKPAD (69))"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
