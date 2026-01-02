@@ -68,19 +68,25 @@ BEGIN TRY
     -- B) QUYỀN + TRẠNG THÁI TÀI KHOẢN (UPSERT theo Ma/Ten)
     ------------------------------------------------------------
     -- Role “chính” (TaiKhoan.QuyenId trỏ vào đây)
-    IF NOT EXISTS (SELECT 1 FROM Quyen WHERE Ma='ROLE_ADMIN')
-        INSERT INTO Quyen(Ten, Ma, MoTa, TrangThai, Ext)
-        VALUES (N'ROLE_ADMIN', 'ROLE_ADMIN', N'Quyền chính: Admin hệ thống', 1, 'role');
+    -- Các role (dùng để map sang class trong Actors/*)
+-- Lưu ý: LoginController đang đọc Quyen.Ext rồi tạo instance Type "Actors.{Ext}"
+-- => Ext PHẢI là: Admin / Developer / Staff
 
-    IF NOT EXISTS (SELECT 1 FROM Quyen WHERE Ma='ROLE_TUNG')
-        INSERT INTO Quyen(Ten, Ma, MoTa, TrangThai, Ext)
-        VALUES (N'ROLE_TUNG_PLATFORM_FARM', 'ROLE_TUNG', N'Quyền chính: Nền tảng + Văn bản + Chăn nuôi', 1, 'role');
+IF EXISTS (SELECT 1 FROM Quyen WHERE Ma='ROLE_ADMIN')
+    UPDATE Quyen SET Ten=N'ROLE_ADMIN', MoTa=N'Quyền quản trị hệ thống', TrangThai=1, Ext='Admin' WHERE Ma='ROLE_ADMIN';
+ELSE
+    INSERT INTO Quyen(Ten,Ma,MoTa,TrangThai,Ext) VALUES (N'ROLE_ADMIN','ROLE_ADMIN',N'Quyền quản trị hệ thống',1,'Admin');
 
-    IF NOT EXISTS (SELECT 1 FROM Quyen WHERE Ma='ROLE_MINH')
-        INSERT INTO Quyen(Ten, Ma, MoTa, TrangThai, Ext)
-        VALUES (N'ROLE_MINH_WATER', 'ROLE_MINH', N'Quyền chính: Nước sạch + Bản đồ + Báo cáo', 1, 'role');
+IF EXISTS (SELECT 1 FROM Quyen WHERE Ma='ROLE_TUNG')
+    UPDATE Quyen SET Ten=N'ROLE_TUNG', MoTa=N'Role cho tài khoản tung (Developer)', TrangThai=1, Ext='Developer' WHERE Ma='ROLE_TUNG';
+ELSE
+    INSERT INTO Quyen(Ten,Ma,MoTa,TrangThai,Ext) VALUES (N'ROLE_TUNG','ROLE_TUNG',N'Role cho tài khoản tung (Developer)',1,'Developer');
 
-    -- Permission chi tiết (Module 1/2/3/4/5/6)
+IF EXISTS (SELECT 1 FROM Quyen WHERE Ma='ROLE_MINH')
+    UPDATE Quyen SET Ten=N'ROLE_MINH', MoTa=N'Role cho tài khoản hoangminh (Staff)', TrangThai=1, Ext='Staff' WHERE Ma='ROLE_MINH';
+ELSE
+    INSERT INTO Quyen(Ten,Ma,MoTa,TrangThai,Ext) VALUES (N'ROLE_MINH','ROLE_MINH',N'Role cho tài khoản hoangminh (Staff)',1,'Staff');
+-- Permission chi tiết (Module 1/2/3/4/5/6)
     ;WITH P AS (
         SELECT * FROM (VALUES
         ('SYS_DONVI_CRUD',        N'CRUD đơn vị hành chính huyện/xã'),

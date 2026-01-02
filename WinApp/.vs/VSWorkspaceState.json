@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Controllers",
+    "\\Models",
+    "\\Models\\Migration",
+    "\\SQL",
+    "\\VST",
+    "\\VST\\MVC"
+  ],
+  "SelectedNode": "\\SQL\\Tables.sql",
+  "PreviewInSolutionExplorer": false
+}

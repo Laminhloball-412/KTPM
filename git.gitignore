@@ -1,0 +1,20 @@
+# Visual Studio
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+Debug/
+Release/
+
+# SQL Server temp files
+*.mdf
+*.ldf
+
+# Others
+*.log

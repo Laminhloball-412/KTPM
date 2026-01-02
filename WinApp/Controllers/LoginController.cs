@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace WinApp.Controllers
 {
     using Models;
-    
+
     class LoginController : DataController<TaiKhoan>
-    {        
+    {
         public override object Index()
         {
             return View(new EditContext(new TaiKhoan { Ten = "dev", MatKhau = "1234" }));
@@ -30,9 +30,29 @@ namespace WinApp.Controllers
                 return;
             }
 
-            // Chỗ này khả năng xuất hiện lỗi chưa định nghĩa lớp trong file Actors/User.cs
-            var role = Provider.GetTable<Quyen>().GetValueById("Ext", acc.QuyenId);
-            var u = (User)Activator.CreateInstance(Type.GetType($"Actors.{role}"));
+            // Lấy role từ cột Ext của bảng Quyen.
+            // Ext nên là: Admin / Developer / Staff (tương ứng các class trong namespace Actors).
+            var roleObj = Provider.GetTable<Quyen>().GetValueById("Ext", acc.QuyenId);
+            var role = Convert.ToString(roleObj)?.Trim();
+
+            // Nếu DB chưa có role hoặc role sai, fallback về Staff để tránh crash.
+            if (string.IsNullOrWhiteSpace(role))
+            {
+                role = "Staff";
+            }
+
+            // Nếu role đã là full name (vd: Actors.Admin) thì dùng luôn.
+            var fullTypeName = role.Contains(".") ? role : $"Actors.{role}";
+            var asm = typeof(Actors.Admin).Assembly;
+            var userType = asm.GetType(fullTypeName, throwOnError: false, ignoreCase: true);
+
+            if (userType == null)
+            {
+                UpdateContext.Message = $"Role không hợp lệ: '{role}'. (Không tìm thấy class {fullTypeName})";
+                return;
+            }
+
+            var u = (User)Activator.CreateInstance(userType);
 
             u.UserName = acc.Ten;
             if (acc.HoSoId != 0)

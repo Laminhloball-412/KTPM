@@ -88,6 +88,27 @@ CREATE TABLE TaiKhoan
 )
 GO
 
+CREATE OR ALTER VIEW dbo.ViewDonVi AS
+SELECT dv.*,
+       TrucThuoc = dv1.Ten,
+       Cap = hc.Ten
+FROM DonVi dv
+LEFT JOIN DonVi dv1 ON dv.TrucThuocId = dv1.Id
+LEFT JOIN HanhChinh hc ON dv.HanhChinhId = hc.Id;
+GO
+
+CREATE OR ALTER VIEW dbo.ViewHoSo AS
+SELECT hs.*,
+       TenDangNhap = acc.Ten,
+       MatKhau     = acc.MatKhau,
+       QuyenId     = acc.QuyenId,
+       Quyen       = q.Ten
+FROM HoSo hs
+LEFT JOIN TaiKhoan acc ON acc.HoSoId = hs.Id
+LEFT JOIN Quyen q ON acc.QuyenId = q.Id;
+GO
+
+
 -- 1.9 - 1.11: Nhóm người dùng
 CREATE TABLE NhomNguoiDung
 ( Id int primary key identity

@@ -2,6 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\WinApp",
+    "\\WinApp\\Actors",
     "\\WinApp\\Controllers",
     "\\WinApp\\SQL"
   ],
