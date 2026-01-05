@@ -31,27 +31,27 @@ namespace WinApp.Controllers
             return base.Error(code, message);
         }
 
-        //protected override void TryDelete(ViewDonVi e)
-        //{
-        //    if (Provider.GetTable<DonVi>().GetValueById("TrucThuocId", e.Id) != null)
-        //    {
-        //        UpdateContext.Message = $"Cần xóa tất cả đơn vị con của {e.TenDayDu}";
-        //        return;
-        //    }
+        protected override void TryDelete(ViewDonVi e)
+        {
+            if (Provider.GetTable<DonVi>().GetValueById("TrucThuocId", e.Id) != null)
+            {
+                UpdateContext.Message = $"Cần xóa tất cả đơn vị con của {e.TenDayDu}";
+                return;
+            }
 
-        //    Exec(e.Id);
-        //    DonVi.All.Remove(e);
-        //}
+            Exec(e.Id);
+            DonVi.All.Remove(e);
+        }
 
-        //protected override void TryInsert(ViewDonVi e)
-        //{
-        //    Exec(null, e.Ten, e.HanhChinhId, e.TenHanhChinh, e.TrucThuocId);
-        //    DonVi.All.Clear();
-        //}
+        protected override void TryInsert(ViewDonVi e)
+        {
+            Exec(null, e.Ten, e.HanhChinhId, e.TenHanhChinh, e.TrucThuocId);
+            DonVi.All.Clear();
+        }
 
-        //protected override void TryUpdate(ViewDonVi e)
-        //{
-        //    Exec(e.Id, e.Ten, e.HanhChinhId, e.TenHanhChinh, e.TrucThuocId);
-        //}
+        protected override void TryUpdate(ViewDonVi e)
+        {
+            Exec(e.Id, e.Ten, e.HanhChinhId, e.TenHanhChinh, e.TrucThuocId);
+        }
     }
 }
