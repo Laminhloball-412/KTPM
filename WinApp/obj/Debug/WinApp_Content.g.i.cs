@@ -8,6 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("bin/debug/newtonsoft.json.bson.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("bin/debug/newtonsoft.json.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("bin/debug/winapp.exe")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("bin/debug/winapp.pdb")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sql/procs.sql")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sql/tables.sql")]
 

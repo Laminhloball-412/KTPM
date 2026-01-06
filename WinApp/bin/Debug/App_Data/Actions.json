@@ -11,7 +11,15 @@
     "congtrinh/nhole": "CT Cấp nước Nhỏ lẻ",
     "quyhoach/index": "Quy hoạch Nước sạch",
     "coso/index": "Cơ sở chăn nuôi & làng nghề",
-    "vbpl/index": "Hệ thống Văn bản"
+    "vbpl/index": "Hệ thống Văn bản",
+
+    "migrate": "Dev: Load database",
+    "migrate/csharp": "Dev: C# Generator",
+    "migrate/s/model": "Models",
+    "migrate/s/controller": "Controllers",
+    "migrate/s/view": "Views",
+    "migrate/sql": "Dev: SQL Generator",
+    "migrate/s/proc": "Procedures"
   },
 
   "actors": {
@@ -33,6 +41,35 @@
           {
             "Text": "Văn bản Pháp luật",
             "Refs": [ "vbpl/index" ]
+          }
+        ]
+      }
+    },
+
+    "Developer": {
+      "home": {
+        "Childs": [
+          {
+            "Text": "DEV TOOLS",
+            "Refs": [ "migrate/csharp", "migrate/sql" ]
+          }
+        ]
+      },
+
+      "migrate/csharp": {
+        "Childs": [
+          {
+            "Text": "Project",
+            "Refs": [ "migrate/s/model", "migrate/s/controller", "migrate/s/view" ]
+          }
+        ]
+      },
+
+      "migrate/sql": {
+        "Childs": [
+          {
+            "Text": "Database",
+            "Refs": [ "migrate/s/proc" ]
           }
         ]
       }

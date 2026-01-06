@@ -71,14 +71,18 @@ namespace System
         {
             return JObject.Parse(text).ToObject<Document>();
         }
-        public static T FromObject<T>(object src) where T : Document
-        {
-            return JObject.FromObject(src).ToObject<T>();
-        }
         public static Document FromObject(object src)
         {
+            if (src == null) return null;
             return JObject.FromObject(src).ToObject<Document>();
         }
+
+        public static T FromObject<T>(object src) where T : Document
+        {
+            if (src == null) return null;
+            return JObject.FromObject(src).ToObject<T>();
+        }
+
         public static Document FromList(IEnumerable<Document> src, string name)
         {
             var doc = new Document();

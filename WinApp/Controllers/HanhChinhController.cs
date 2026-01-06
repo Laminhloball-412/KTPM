@@ -33,25 +33,31 @@ namespace WinApp.Controllers
 
         protected override void TryDelete(ViewDonVi e)
         {
+            // chặn xóa khi còn đơn vị con
             if (Provider.GetTable<DonVi>().GetValueById("TrucThuocId", e.Id) != null)
             {
                 UpdateContext.Message = $"Cần xóa tất cả đơn vị con của {e.TenDayDu}";
                 return;
             }
 
-            Exec(e.Id);
+            // để DataController xử lý (PROC hoặc SQL)
+            base.TryDelete(e);
+
+            // cập nhật cache local
             DonVi.All.Remove(e);
         }
 
         protected override void TryInsert(ViewDonVi e)
         {
-            Exec(null, e.Ten, e.HanhChinhId, e.TenHanhChinh, e.TrucThuocId);
-            DonVi.All.Clear();
+            base.TryInsert(e);
+            DonVi.All.Clear(); // clear cache để load lại danh sách
         }
 
         protected override void TryUpdate(ViewDonVi e)
         {
-            Exec(e.Id, e.Ten, e.HanhChinhId, e.TenHanhChinh, e.TrucThuocId);
+            base.TryUpdate(e);
+            DonVi.All.Clear();
         }
+
     }
 }

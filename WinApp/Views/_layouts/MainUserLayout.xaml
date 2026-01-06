@@ -19,9 +19,10 @@
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="250" />
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
+
                 <StackPanel Margin="10 0" VerticalAlignment="Center">
                     <Label Content="K.T.P.M" 
                                Padding="0"

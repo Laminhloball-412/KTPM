@@ -141,9 +141,9 @@ ELSE
     -- C) HỒ SƠ + TÀI KHOẢN (Tùng + Hoàng Minh + Admin) UPSERT
     ------------------------------------------------------------
     -- HoSo (nhận diện theo Email)
-    IF NOT EXISTS (SELECT 1 FROM HoSo WHERE Email='tung.vusong@hust.edu.vn')
+    IF NOT EXISTS (SELECT 1 FROM HoSo WHERE Email='tung.hq@hust.edu.vn')
         INSERT INTO HoSo(Ten, SDT, Email, DiaChi, NgaySinh, Ext)
-        VALUES (N'Vũ Song Tùng', '0989154248', 'tung.vusong@hust.edu.vn', N'Hà Nội', '1999-01-01', N'Phụ trách nền tảng & chăn nuôi');
+        VALUES (N'Hà Quang Tùng', '0900000001', 'tung.vusong@hust.edu.vn', N'Hà Nội', '1999-01-01', N'Phụ trách nền tảng & chăn nuôi');
 
     IF NOT EXISTS (SELECT 1 FROM HoSo WHERE Email='hoangminh@hust.edu.vn')
         INSERT INTO HoSo(Ten, SDT, Email, DiaChi, NgaySinh, Ext)
@@ -158,10 +158,10 @@ ELSE
         INSERT INTO TaiKhoan(Ten, MatKhau, HoSoId, QuyenId, TrangThaiId, EmailKhoiPhuc, LanDangNhapCuoi, SoLanSai, KhoaDen, Ext)
         VALUES(
             'tung','1234',
-            (SELECT TOP 1 Id FROM HoSo WHERE Email='tung.vusong@hust.edu.vn'),
+            (SELECT TOP 1 Id FROM HoSo WHERE Email='tung.hq@hust.edu.vn'),
             (SELECT TOP 1 Id FROM Quyen WHERE Ma='ROLE_TUNG'),
             (SELECT TOP 1 Id FROM TrangThaiTaiKhoan WHERE Ten=N'Hoạt động'),
-            'tung.vusong@hust.edu.vn', NULL, 0, NULL, 'seed'
+            'tung.hq@hust.edu.vn', NULL, 0, NULL, 'seed'
         );
 
     IF NOT EXISTS (SELECT 1 FROM TaiKhoan WHERE Ten='hoangminh')
@@ -177,7 +177,7 @@ ELSE
     IF NOT EXISTS (SELECT 1 FROM TaiKhoan WHERE Ten='admin')
         INSERT INTO TaiKhoan(Ten, MatKhau, HoSoId, QuyenId, TrangThaiId, EmailKhoiPhuc, LanDangNhapCuoi, SoLanSai, KhoaDen, Ext)
         VALUES(
-            'admin','admin123',
+            'admin','1234',
             (SELECT TOP 1 Id FROM HoSo WHERE Email='admin@ktpm.local'),
             (SELECT TOP 1 Id FROM Quyen WHERE Ma='ROLE_ADMIN'),
             (SELECT TOP 1 Id FROM TrangThaiTaiKhoan WHERE Ten=N'Hoạt động'),

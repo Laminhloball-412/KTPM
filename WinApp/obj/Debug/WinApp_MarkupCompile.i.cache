@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-E:\SQL2022\KTPM_FULL_UPDATED\WinApp\obj\Debug\
+C:\Users\THINKPAD\source\repos\KTPM\WinApp\obj\Debug\
 WinApp
 none
 false
 DEBUG;TRACE
-E:\SQL2022\KTPM_FULL_UPDATED\WinApp\App.xaml
+C:\Users\THINKPAD\source\repos\KTPM\WinApp\App.xaml
 8851687289
-2-737652470
+6818011790
 70-168498663
-15-1078025995
+15-2021109435
 MainWindow.xaml;Views\HanhChinh\DonViSelector.xaml;Views\Migrate\MigrateLayout.xaml;Views\_layouts\PageHeader.xaml;Views\_layouts\DataListViewLayout.xaml;Views\Migrate\CodeViewer.xaml;Views\_layouts\MainUserLayout.xaml;Views\_layouts\FormViewLayout.xaml;
 
 False

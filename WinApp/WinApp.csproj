@@ -206,6 +206,9 @@
     <None Include="App_Data\Config.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="bin\Debug\App_Data\Actions.json" />
+    <None Include="bin\Debug\App_Data\Config.json" />
+    <None Include="bin\Debug\WinApp.exe.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -216,6 +219,11 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Resource Include="bin\Debug\App_Data\test.txt" />
+    <Content Include="bin\Debug\Newtonsoft.Json.Bson.dll" />
+    <Content Include="bin\Debug\Newtonsoft.Json.dll" />
+    <Content Include="bin\Debug\WinApp.exe" />
+    <Content Include="bin\Debug\WinApp.pdb" />
     <Content Include="SQL\Procs.sql" />
     <Content Include="SQL\Tables.sql" />
   </ItemGroup>
